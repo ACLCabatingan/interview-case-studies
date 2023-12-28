@@ -7,6 +7,26 @@ from scipy.stats import norm
 
 
 
+CLRS = {
+    'blue':'#01468C',   #(1,70,140)
+    'lblue': '#2878C8', #(40,120,200)
+    'red':'#C82D28',    #(200,45, 40)
+    'lred':'#C34146',   #(210, 105, 110)
+    'purple':'#462D6E', #(70, 45, 110)
+    'lpurple':'#6E5591', #(110, 85, 145)
+    'green':'#3B7A57',  #(59, 122, 87),
+    'lgreen':'#A5CD91', #165,205,145
+    'yellow':'#FFBF00', #(255, 191, 0)
+    'lyellow':'#FFCF40', #(255, 207, 64)
+}
+'''
+red - lblue
+purple - lgreen
+blue - lred
+blue - lyellow
+green - lpurple
+'''
+
 def get_trunc_corr_df(data, th):
     return data \
         .where(np.triu(np.ones(data.shape),k=1).astype(np.bool)) \
